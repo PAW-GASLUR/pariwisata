@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('wisata');
+});
+Route::get('/galeri', function () {
+    return view('galeri');
+});
+Route::get('/informasi', function () {
+    return view('informasi');
+});
+
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
 });
