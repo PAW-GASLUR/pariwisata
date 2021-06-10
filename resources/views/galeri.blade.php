@@ -14,6 +14,22 @@
     @include('component.navbar')
     <div>
         <h1>GALERI</h1>
+        <div class="col-lg-8 col-md-10 mx-auto">
+          @if (count($data) > 0)
+              @foreach ($data as $item)
+                  <div class="card mb-3">
+                      
+                      <div class="card-body">
+                          <h1 class="card-title">{{ $item->judul_galeri }}</h1>
+                          <h4 class="card-title">{{ $item->tgl_galeri }}</h4>
+                          {{-- <img src="{{ Voyager::image($item->gambar_info) }}" class="card-img-top" alt="..."> --}}
+                      </div>
+                  </div>
+              @endforeach
+          @else
+              <p class="alert alert-danger">Berita tidak ditemukan</p>
+          @endif
+      </div>
     </div>
     @include('component.footer')
 

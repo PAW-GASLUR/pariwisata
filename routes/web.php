@@ -18,14 +18,18 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [\App\Http\Controllers\WisataController::class,'index'])->name('data');
-Route::get('/galeri', function () {
-    return view('galeri');
-});
-Route::get('/informasi', function () {
-    return view('informasi');
-});
 
+// Route::get('/galeri', function () {
+//     return view('galeri');
+// });
 
+Route::get('/galeri', [\App\Http\Controllers\GaleriController::class,'index'])->name('data');
+
+// Route::get('/informasi', function () {
+//     return view('informasi');
+// });
+
+Route::get('/informasi', [\App\Http\Controllers\InformasiController::class,'index'])->name('data');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
