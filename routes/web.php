@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('wisata');
-});
+// Route::get('/', function () {
+//     return view('wisata');
+// });
+
+Route::get('/', [\App\Http\Controllers\WisataController::class,'index'])->name('data');
 Route::get('/galeri', function () {
     return view('galeri');
 });
