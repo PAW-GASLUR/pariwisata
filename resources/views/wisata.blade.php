@@ -27,23 +27,7 @@
             </div>
         </div>
 
-        <div class="col-lg-8 col-md-10 mx-auto">
-            @if (count($data) > 0)
-                @foreach ($data as $item)
-                    <div class="card mb-3">
-                        {{-- <img src="{{ Voyager::image($item->image) }}" class="card-img-top" alt="..."> --}}
-                        <div class="card-body">
-                            <h1 class="card-title">{{ $item->judul_wisata }}</h1>
-                            <h4 class="card-title">{{ $item->alamat_wisata }}</h4>
-                            <h6 class="card-title">{{ $item->info_wisata }}</h6>
-                            {{-- <h5 class="card-title">{{ $item->jenis_wisata }}</h5> --}}
-                        </div>
-                    </div>
-                @endforeach
-            @else
-                <p class="alert alert-danger">Berita tidak ditemukan</p>
-            @endif
-        </div>
+        
         <div class="animate" id="home">
             <div class="isi">
                 <div class="container atas">
@@ -86,6 +70,24 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="col-lg-8 col-md-10 mx-auto">
+            @if (count($data) > 0)
+                @foreach ($data as $item)
+                    <div class="card mb-3">
+                        {{-- <img src="{{ Voyager::image($item->image) }}" class="card-img-top" alt="..."> --}}
+                        <div class="card-body">
+                            <h1 class="card-title">{{ $item->judul_wisata }}</h1>
+                            <h4 class="card-title">{{ $item->alamat_wisata }}</h4>
+                            <h6 class="card-title">{{ $item->info_wisata }}</h6>
+                            {{-- <h5 class="card-title">{{ $item->jenis_wisata }}</h5> --}}
+                        </div>
+                    </div>
+                @endforeach
+            @else
+                <p class="alert alert-danger">Berita tidak ditemukan</p>
+            @endif
         </div>
         @include('component.footer')
 
